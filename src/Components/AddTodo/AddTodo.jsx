@@ -9,7 +9,7 @@ function AddTodo({updatelist}){
             value={inputText} 
             placeholder="add your next todo.."
             onChange={e=> SetInputText(e.target.value)} />
-            <button onClick={()=> updatelist()}>ADD</button>
+            <button onClick={()=> updatelist(inputText)}>ADD</button>
         </div>
     )
 }
