@@ -14,7 +14,7 @@ function App() {
   return (
     <Todocontext.Provider value={{list, setlist}}>  
     <AddTodo updatelist={((todo)=> setlist(
-      [...list,
+      [...list,   
        {id: list.length+1, tododata: todo, finished: false}]))}/>
     <Todolist list={list} updatelist={setlist}/>
     </Todocontext.Provider>
