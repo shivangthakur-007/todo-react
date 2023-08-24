@@ -19,9 +19,20 @@ function Todolist(){
                             }
                             return t;
                         })
-                    setlist(updatedlist)
+                        setlist(updatedlist)
+                        }}
+                    onDelete={()=> {
+                        const updatedlist= list.filter(t=> t.id !== todo.id)
+                        setlist(updatedlist)
                     }}
-
+                    onEdit={(todotext)=>{
+                        const updatedlist= list.map(t=>{
+                            if(t.id = todo.id){
+                                todo.tododata= todotext
+                            }
+                        })
+                        setlist(updatedlist)
+                    }}
                      />)}
         </div>
     )
