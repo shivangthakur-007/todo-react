@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import Todocontext from './Components/Context/Todocontext.js'
+
+import { Provider } from 'react-redux'
+import store from './store.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-   <Todocontext.Provider value={{}}>
-    <App />
-   </Todocontext.Provider> 
+   <Provider store={store}>
+   <App />
+   </Provider>
 )

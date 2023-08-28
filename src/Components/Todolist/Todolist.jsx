@@ -1,11 +1,10 @@
-import { useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Todo from "../Todo/Todo";
-import Todocontext from "../Context/Todocontext";
-import TodoDispatchContext from "../Context/TodoDispatchContext";
 
 function Todolist(){
-    const {list}= useContext(Todocontext)
-    const {dispatch}= useContext(TodoDispatchContext)
+    const dispatch= useDispatch();
+    const list= useSelector((state)=> state.todo);
+    
     function onFinished(todo, isfinished){
         dispatch({type: 'finish_todo', payload: {todo, isfinished: isfinished}})
     }
