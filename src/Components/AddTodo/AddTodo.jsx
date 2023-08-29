@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { addTodo } from "../../actions/todoAction";
 
 function AddTodo(){
     const dispatch = useDispatch();
@@ -11,10 +12,10 @@ function AddTodo(){
             value={inputText} 
             placeholder="add your next todo.."
             onChange={e=> SetInputText(e.target.value)} />
-            <button onClick={()=>
-                {dispatch({type: 'add_todo', payload: {todoText: inputText}})
+            <button onClick={()=>{
+                dispatch(addTodo)
                 SetInputText('')
-            }} >ADD</button>
+            }}>ADD</button>
         </div>
     )
 }

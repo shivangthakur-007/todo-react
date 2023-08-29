@@ -8,9 +8,9 @@ function App() {
   
   const [list, dispatch]= useReducer(todoReducer, []);
     <>
+    
       <AddTodo />
       <Todolist />
-
       </>
 }
 
