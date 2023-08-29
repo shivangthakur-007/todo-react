@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import { addTodo } from "../../actions/todoAction";
 
-function AddTodo(){
-    const dispatch = useDispatch();
+function AddTodo({addTodo}){
+
     const [inputText, SetInputText]= useState('');
     return (
         <div>
@@ -13,7 +12,7 @@ function AddTodo(){
             placeholder="add your next todo.."
             onChange={e=> SetInputText(e.target.value)} />
             <button onClick={()=>{
-                dispatch(addTodo)
+            addTodo(inputText)
                 SetInputText('')
             }}>ADD</button>
         </div>

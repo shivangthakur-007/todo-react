@@ -1,24 +1,23 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Todo from "../Todo/Todo";
 
-function Todolist(){
-    const dispatch= useDispatch();
+function Todolist({editTodo, deleteTodo, todoFinished}){
     const list= useSelector((state)=> state.todo);
     
     function onFinished(todo, isfinished){
-        dispatch({type: 'finish_todo', payload: {todo, isfinished: isfinished}})
+        todoFinished(todo, isfinished)
     }
     function onDelete (todo)
     {
-      dispatch({type: 'delete_todo', payload: {todo}})
+      deleteTodo(todo)
     };
     function onEdit(todo, todoText){
-         dispatch({type: 'edit_todo', payload: {todo, todoText}})
+         editTodo(todo, todoText)
     }
     return(
         <div>
             {list.length >0 &&
-            list.map(todo =><Todo
+            list.map(todo => <Todo
                       key={todo.id} 
                      id={todo.id}   
                      isfinished={todo.finished} 
