@@ -1,7 +1,7 @@
 
 
 // Reducer imports 
-import todoReducer from "./Reducer/todoReducer";
+import todoReducer from './slices/todoSlices'
 import { configureStore } from "@reduxjs/toolkit";
 
 

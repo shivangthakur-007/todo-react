@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { addTodo } from "../../actions/todoAction";
 
 function AddTodo({addTodo}){
 
@@ -12,7 +11,7 @@ function AddTodo({addTodo}){
             placeholder="add your next todo.."
             onChange={e=> SetInputText(e.target.value)} />
             <button onClick={()=>{
-            addTodo(inputText)
+            addTodo({todoText: inputText})
                 SetInputText('')
             }}>ADD</button>
         </div>
